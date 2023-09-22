@@ -9,7 +9,7 @@ Please cite this proceeding as follows:
 
 
 *Temiz, H. (2023). Towards Accurate Classification of Miniature Images. Latin America 5th International Conference on 
-Scientific Researches,Medellin, Columbia, pp. 181-187.*
+Scientific Researches,Medellin, pp. 181-187.*
 
 
 
