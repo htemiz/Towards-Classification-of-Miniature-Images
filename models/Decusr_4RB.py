@@ -1,7 +1,7 @@
 ﻿"""
 DECUSR model tailored for classifying Ottoman Miniature Images. This is a DeepSR file.
 
-To run this model (training or test)
+To run this model, e.g., training:
 
 --python.exe -m DeepSR.DeepSR --modelfile Decusr_4RB.py --train
 

@@ -1,7 +1,7 @@
 """
 VDSR-19 model tailored for classifying Ottoman Miniature Images. This is a DeepSR file.
 
-To run this model (training)
+To run this model, e.g., training:
 
 --python.exe -m DeepSR.DeepSR --modelfile VDSR.py --train
 
