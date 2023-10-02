@@ -26,11 +26,11 @@ literary works, religious subjects, traditions and customs, women and men, and c
 In this work aimed to teach computer to identify the artists of the miniatures from given images. To accomplish this, 
 a convolutional neural network (CNN) is trained with some miniature images of four different artists. 
 
-### Dataset
+### Dataset[Decusr_4RB.py](models%2FDecusr_4RB.py)
 Dataset consists of 380 images belonging the following four artists: 
 Levni, Matrakçı Nasuh, Rumuzi and Seyyid Lokman. The images were downloaded from [https://www.turkishculture.org](https://www.turkishculture.org)
 
-### Algorithm
+### Algorithms
 Entire experiment is done with Keras. The architecture of the algorithms as follows.
 
 [](images/cnn.png)
