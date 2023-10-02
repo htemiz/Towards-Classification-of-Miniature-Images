@@ -62,7 +62,7 @@ model files.
 
 For additional information and examples, please refer to the documentation of DeepSR:
 
-    [https://github.com/htemiz/DeepSR](https://github.com/htemiz/DeepSR)
+[!https://github.com/htemiz/DeepSR](https://github.com/htemiz/DeepSR)
 
 
 
