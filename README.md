@@ -33,7 +33,7 @@ Levni, Matrakçı Nasuh, Rumuzi and Seyyid Lokman. The images were downloaded fr
 ### Algorithms
 Entire experiment is done with Keras. The architecture of the algorithm is as follows:
 
-[](images/cnn.png)
+![ ](images/cnn.png)
 
 #### Code of the Model
 The partial code of the CNN model structure is given below. This code is only a part of the class `My_Model`, which is 
