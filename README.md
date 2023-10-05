@@ -39,9 +39,25 @@ Here is the details of the dataset:
 |**Total**|**344**|**36**|**380**|
 
 A couple of examples of the miniatures of each craftsmen:
-|Craftsman|Training|Test|Total|
-|--|--|--|--|
-|![](images/levni_01.jpg)|--|--|--|
+
+
+<table>
+<tr></tr>
+    <td colspan="2">Levni</td>
+    <td colspan="2">Matrakçı Nasuh</td>
+    <td colspan="2">Rumuzi</td>
+    <td colspan="2">Seyyid Lokman</td>
+<tr></tr>
+    <td>![](images/levni_01.jpg)</td>
+    <td>![](images/levni_02.jpg)</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+<tr></tr>
+</table>
 
 
 ### Algorithm
