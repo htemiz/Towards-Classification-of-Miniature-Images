@@ -43,10 +43,10 @@ A couple of examples of the miniatures of each craftsmen:
 
 <table>
 <tr style="text-align: center;"></tr>
-    <td colspan="2">Levni</td>
-    <td colspan="2">Matrakçı Nasuh</td>
-    <td colspan="2">Rumuzi</td>
-    <td colspan="2">Seyyid Lokman</td>
+    <td colspan="2" style="text-align: center;">Levni</td>
+    <td colspan="2" style="text-align: center;">Matrakçı Nasuh</td>
+    <td colspan="2" style="text-align: center;">Rumuzi</td>
+    <td colspan="2" style="text-align: center;">Seyyid Lokman</td>
 <tr></tr>
     <td><img src="images/levni_01.jpg"></td>
     <td><img src="images/levni_02.jpg"></td>
