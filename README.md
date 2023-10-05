@@ -41,21 +41,24 @@ Entire experiment is done with Keras. The architecture of the algorithms as foll
 
 [SRCNN](models%2FSRCNN.py)
 
+#### Code of the Model
+The code of the CNN model is given below. This code is only a part of the class `My_Model`, which is 
+defined in `abstract_model.py`. 
+
+
 ```python
 
+metrics = self.metrics if mode=='train' else self.test_metrics
 main_input = Input(shape=self.input_shape, name='main_input')
 x = self.data_augmentation(main_input)
 x = self.fn_normalization(x)
 feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(x)
-# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
-# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
 if self.max_pooling:
     feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
 
 if self.normalize_batch:
     feature_extraction = BatchNormalization()(feature_extraction)
 
-# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
 feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
 
 if self.max_pooling:
@@ -64,7 +67,6 @@ if self.max_pooling:
     if self.normalize_batch:
         feature_extraction = BatchNormalization()(feature_extraction)
 
-# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
 feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
 
 if self.max_pooling:
@@ -72,22 +74,15 @@ if self.max_pooling:
 
     if self.normalize_batch:
         feature_extraction = BatchNormalization()(feature_extraction)
-
 
 x = Flatten()(feature_extraction)
-# if self.normalize_batch:
-#     x = BatchNormalization()(x)
-# x = Dense(8, activation=self.activation)(x)
-# x = Dense(32, activation=self.activation)(x)
+
 if self.normalize_batch:
     x = BatchNormalization()(x)
 # x = keras.layers.Dense(16, activation='relu')(x)
 output = Dense(4, activation='softmax')(x)
 
 model = Model(main_input, outputs=output, trainable=False)
-
-# if mode=='test':
-#     model.trainable=False
 
 model.compile(
     optimizer=self.optimizer,
@@ -96,6 +91,8 @@ model.compile(
 )
 
 model.summary()
+
+return model
         
 ```
 
