@@ -34,7 +34,7 @@ Levni, Matrakçı Nasuh, Rumuzi and Seyyid Lokman. The images were downloaded fr
 |Matrakçı Nasuh|87|9|96|
 |Rumuzi|84|9|93|
 |Seyyid Lokman|88|9|97|
-|Total|344|36|380|
+|**Total**|**344**|**36**|**380**|
 
 
 
