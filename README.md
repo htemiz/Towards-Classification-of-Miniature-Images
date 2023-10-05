@@ -48,14 +48,7 @@ A couple of examples of the miniatures of each craftsmen:
     <td colspan="2">Rumuzi</td>
     <td colspan="2">Seyyid Lokman</td>
 <tr></tr>
-    <td>![](images/levni_01.jpg)</td>
-    <td>![](images/levni_02.jpg)</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><img src="images/levni_01.jpg"></td>
 <tr></tr>
 </table>
 
