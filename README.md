@@ -49,6 +49,13 @@ A couple of examples of the miniatures of each craftsmen:
     <td colspan="2">Seyyid Lokman</td>
 <tr></tr>
     <td><img src="images/levni_01.jpg"></td>
+    <td><img src="images/levni_02.jpg"></td>
+    <td><img src="images/nasuh_01.jpg"></td>
+    <td><img src="images/nasuh_02.jpg"></td>
+    <td><img src="images/rumuzi_01.jpg"></td>
+    <td><img src="images/rumuzi_02.jpg"></td>
+    <td><img src="images/lokman_01.jpg"></td>
+    <td><img src="images/lokman_02.jpg"></td>
 <tr></tr>
 </table>
 
