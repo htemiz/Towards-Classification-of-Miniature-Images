@@ -4,13 +4,11 @@ ___[Towards Accurate Classification of Miniature Images](https://www.amerikakong
 presented in 
 ___[Latin America 5th International Conference on Scientific Researches](https://www.amerikakongresi.org/)___, March 17-19, Medellin, Columbia, 2023.
 
-[abstract_model.py](model%2Fabstract_model.py)
+
 Please cite this proceeding as follows:
 
-[abstract_model.py](model%2Fabstract_model.py)
 *Temiz, H. (2023). Towards Accurate Classification of Miniature Images. Latin America 5th International Conference on 
 Scientific Researches,Medellin, pp. 181-187.*
-
 
 
 Please feel free to contact me at [htemiz@artvin.edu.tr](mailto:htemiz@artvin.edu.tr) for further information and comments.
@@ -29,6 +27,18 @@ a convolutional neural network (CNN) is trained with some miniature images of fo
 ### Dataset
 Dataset consists of 380 images belonging the following four artists: 
 Levni, Matrakçı Nasuh, Rumuzi and Seyyid Lokman. The images were downloaded from [https://www.turkishculture.org](https://www.turkishculture.org)
+
+|||||
+|Craftsman|Training|Test|Totoal|
+|Levni|85|9|94|
+|Matrakçı Nasuh|87|9|96|
+|Rumuzi|84|9|93|
+|Seyyid Lokman|88|9|97|
+|Total|344|36|380|
+
+
+
+
 
 ### Algorithm
 Entire experiment is done with Keras. The architecture of the algorithm is as follows:
