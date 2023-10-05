@@ -28,7 +28,6 @@ a convolutional neural network (CNN) is trained with some miniature images of fo
 Dataset consists of 380 images belonging the following four artists: 
 Levni, Matrakçı Nasuh, Rumuzi and Seyyid Lokman. The images were downloaded from [https://www.turkishculture.org](https://www.turkishculture.org)
 
-|||||
 |--|--|--|--|
 |Craftsman|Training|Test|Total|
 |Levni|85|9|94|
