@@ -38,8 +38,7 @@ Here is the details of the dataset:
 |Seyyid Lokman|88|9|97|
 |**Total**|**344**|**36**|**380**|
 
-A couple of examples of the miniatures of each craftsmen:
-
+A couple of sample miniature images of each craftsmen:
 
 <table>
 <tr style="text-align: center;"></tr>
