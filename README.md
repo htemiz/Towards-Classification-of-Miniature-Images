@@ -15,22 +15,22 @@ Scientific Researches,Medellin, pp. 181-187.*
 
 Please feel free to contact me at [htemiz@artvin.edu.tr](mailto:htemiz@artvin.edu.tr) for further information and comments.
 
-### Overview[cnn.py](model%2Fcnn.py)
-Miniatures are small images used to drawn on manuscripts to visually describe the subject of the manuscripts. 
+### Overview
+Miniatures are small images drawn on manuscripts to visually describe the subject of the manuscripts. 
 Miniature paintings are made to provide a better understanding of what is told in the texts or to strengthen 
 the narration. Ottomans used the miniatures between 14th and 18th centuries.
 
-They depict portraits, lives of sultans, festivals, historical events, life style, nature and city views, 
+They depict portraits, lives of sultans, festivals, historical events, lifestyle, nature and city views, 
 literary works, religious subjects, traditions and customs, women and men, and creatures such as animals and plants.
 [cnn.py](model%2Fcnn.py)
-In this work aimed to teach [cnn.py](model%2Fcnn.py)computer to identify the artists of the miniatures from given images. To accomplish this, 
+In this work aimed to teach the computer to identify the artists of the miniatures from given images. To accomplish this, 
 a convolutional neural network (CNN) is trained with some miniature images of four different artists. 
 
 ### Dataset
 Dataset consists of 380 images belonging the following four artists: 
 Levni, Matrakçı Nasuh, Rumuzi and Seyyid Lokman. The images were downloaded from [https://www.turkishculture.org](https://www.turkishculture.org)
 
-### Algorithms
+### Algorithm
 Entire experiment is done with Keras. The architecture of the algorithm is as follows:
 
 ![ ](images/cnn.png)
@@ -39,6 +39,7 @@ Entire experiment is done with Keras. The architecture of the algorithm is as fo
 The partial code of the CNN model structure is given below. This code is only a part of the class `My_Model`, which is 
 defined in `abstract_model.py. Code for evaluation metrics is in `metrics.py` file. Entire work is done with the class.
 
+Some codes refer to members and methods in the class `My_Model`.
 
 ```python
 
