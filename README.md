@@ -31,19 +31,13 @@ Dataset consists of 380 images belonging the following four artists:
 Levni, Matrakçı Nasuh, Rumuzi and Seyyid Lokman. The images were downloaded from [https://www.turkishculture.org](https://www.turkishculture.org)
 
 ### Algorithms
-Entire experiment is done with Keras. The architecture of the algorithms as follows:
+Entire experiment is done with Keras. The architecture of the algorithm is as follows:
 
-[DECUSR](models%2FDecusr_4RB.py)
-
-[REDNet](models%2FREDNET.py)
-
-[VDSR-19](models%2FVDSR.py)
-
-[SRCNN](models%2FSRCNN.py)
+[](images/cnn.png)
 
 #### Code of the Model
-The code of the CNN model is given below. This code is only a part of the class `My_Model`, which is 
-defined in `abstract_model.py`. 
+The partial code of the CNN model structure is given below. This code is only a part of the class `My_Model`, which is 
+defined in `abstract_model.py. Code for evaluation metrics is in `metrics.py` file. Entire work is done with the class.
 
 
 ```python
@@ -96,31 +90,12 @@ return model
         
 ```
 
-Each model files is a type of DeepSR file. To train, e.g., DECUSR, issue the following command:
-
-
+#### How to Run
+In the experiment many alternatives of hyper-parameters were tried. You can start the experiment with `run.py`. To run,  
 ```shell
-python -m DeepSR.DeepSR --modelfile models/Decusr_4RB.py --train
+python run.py
 ```
 
-Please specify the path of training directory by adding ```--traindir <path to training directory>``` command parameter.
-It can also be specified with 'traindir' keyword in the 'settings' dictionary located in the model file.
-
-To test the model, add ```--test --testpath <path to your test files>``` command arguments. Please remove ```--train```
-if you will not train and just test the model. 
-
-TO re-initiate the model with pre-trained weights, add ```--weightpath <path to your weight file>``` 
-
-The parameters can , as some of them are illustrated just above lines, be set in the 'settings' dictionary in the 
-model files. 
-
-For additional information and examples, please refer to the documentation of DeepSR:
-
-[!https://github.com/htemiz/DeepSR](https://github.com/htemiz/DeepSR)
-
-
-
-[](images/cnn.png)
 
 ### Training
 
