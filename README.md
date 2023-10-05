@@ -4,10 +4,10 @@ ___[Towards Accurate Classification of Miniature Images](https://www.amerikakong
 presented in 
 ___[Latin America 5th International Conference on Scientific Researches](https://www.amerikakongresi.org/)___, March 17-19, Medellin, Columbia, 2023.
 
-
+[abstract_model.py](model%2Fabstract_model.py)
 Please cite this proceeding as follows:
 
-
+[abstract_model.py](model%2Fabstract_model.py)
 *Temiz, H. (2023). Towards Accurate Classification of Miniature Images. Latin America 5th International Conference on 
 Scientific Researches,Medellin, pp. 181-187.*
 
@@ -15,15 +15,15 @@ Scientific Researches,Medellin, pp. 181-187.*
 
 Please feel free to contact me at [htemiz@artvin.edu.tr](mailto:htemiz@artvin.edu.tr) for further information and comments.
 
-### Overview
+### Overview[cnn.py](model%2Fcnn.py)
 Miniatures are small images used to drawn on manuscripts to visually describe the subject of the manuscripts. 
 Miniature paintings are made to provide a better understanding of what is told in the texts or to strengthen 
 the narration. Ottomans used the miniatures between 14th and 18th centuries.
 
 They depict portraits, lives of sultans, festivals, historical events, life style, nature and city views, 
 literary works, religious subjects, traditions and customs, women and men, and creatures such as animals and plants.
-
-In this work aimed to teach computer to identify the artists of the miniatures from given images. To accomplish this, 
+[cnn.py](model%2Fcnn.py)
+In this work aimed to teach [cnn.py](model%2Fcnn.py)computer to identify the artists of the miniatures from given images. To accomplish this, 
 a convolutional neural network (CNN) is trained with some miniature images of four different artists. 
 
 ### Dataset
@@ -41,6 +41,63 @@ Entire experiment is done with Keras. The architecture of the algorithms as foll
 
 [SRCNN](models%2FSRCNN.py)
 
+```python
+
+main_input = Input(shape=self.input_shape, name='main_input')
+x = self.data_augmentation(main_input)
+x = self.fn_normalization(x)
+feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(x)
+# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+if self.max_pooling:
+    feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+
+if self.normalize_batch:
+    feature_extraction = BatchNormalization()(feature_extraction)
+
+# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+
+if self.max_pooling:
+    feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)
+
+    if self.normalize_batch:
+        feature_extraction = BatchNormalization()(feature_extraction)
+
+# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+
+if self.max_pooling:
+    feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)
+
+    if self.normalize_batch:
+        feature_extraction = BatchNormalization()(feature_extraction)
+
+
+x = Flatten()(feature_extraction)
+# if self.normalize_batch:
+#     x = BatchNormalization()(x)
+# x = Dense(8, activation=self.activation)(x)
+# x = Dense(32, activation=self.activation)(x)
+if self.normalize_batch:
+    x = BatchNormalization()(x)
+# x = keras.layers.Dense(16, activation='relu')(x)
+output = Dense(4, activation='softmax')(x)
+
+model = Model(main_input, outputs=output, trainable=False)
+
+# if mode=='test':
+#     model.trainable=False
+
+model.compile(
+    optimizer=self.optimizer,
+    loss=self.loss, # CategoricalCrossentropy(from_logits=True), #
+    metrics=metrics,
+)
+
+model.summary()
+        
+```
 
 Each model files is a type of DeepSR file. To train, e.g., DECUSR, issue the following command:
 
