@@ -42,7 +42,7 @@ A couple of examples of the miniatures of each craftsmen:
 
 
 <table>
-<tr></tr>
+<tr style="text-align: center;"></tr>
     <td colspan="2">Levni</td>
     <td colspan="2">Matrakçı Nasuh</td>
     <td colspan="2">Rumuzi</td>
