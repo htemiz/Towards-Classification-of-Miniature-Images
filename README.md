@@ -58,6 +58,14 @@ A couple of sample miniature images of each craftsmen:
 <tr></tr>
 </table>
 
+The data augmented by the following operations:
+
+•	RandomFlip(‘horizontal’)
+•	RandomRotation(0.10)
+•	RandomRotation(0.15)
+•	RandomRotation(0.25)
+
+
 
 ### Algorithm
 Entire experiment is done with Keras. The architecture of the algorithm is as follows:
