@@ -172,6 +172,7 @@ The visuallization of the training performance of the algorithm:
 |--|--|--|--|
 |0.9722|0.9706|0.9167|0.9968|
 
+&nbsp;
 
 **Confusion Matrix**
 
