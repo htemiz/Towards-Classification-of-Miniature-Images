@@ -47,7 +47,7 @@ A couple of sample miniature images of each craftsmen:
     <td colspan="2" style="text-align: center;">Rumuzi</td>
     <td colspan="2" style="text-align: center;">Seyyid Lokman</td>
 <tr></tr>
-    <td><img src="images/levni_01.jpg"></td>
+    <td><img src="images/levni_01.jpg" height="50"></td>
     <td><img src="images/levni_02.jpg"></td>
     <td><img src="images/nasuh_01.jpg"></td>
     <td><img src="images/nasuh_02.jpg"></td>
@@ -65,58 +65,75 @@ Entire experiment is done with Keras. The architecture of the algorithm is as fo
 ![ ](images/cnn.png)
 
 #### Code of the Model
-The partial code of the CNN model structure is given below. This code is only a part of the class `My_Model`, which is 
-defined in `abstract_model.py. Code for evaluation metrics is in `metrics.py` file. Entire work is done with the class.
+The partial code of the CNN model structure is given below. This code is a member of the class `My_Model`, which is 
+defined in `abstract_model.py`. Entire work is done through this class.
 
-Some codes refer to members and methods in the class `My_Model`.
+Some codes refer to members and methods in the class. Please refer to the class definition for actual values/setting of the 
+variables.  You can simplify the code and adapt it to your own implementation by replacing the codes referring to the 
+member methods or variables of the class with their active values. E.g., rather than referring to class's member
+
+```python
+metrics = self.metrics 
+```
+
+write
+
+
+```python
+metrics=['categorical_accuracy']
+```
+
+Here is the full code:
 
 ```python
 
-metrics = self.metrics if mode=='train' else self.test_metrics
-main_input = Input(shape=self.input_shape, name='main_input')
-x = self.data_augmentation(main_input)
-x = self.fn_normalization(x)
-feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(x)
-if self.max_pooling:
-    feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
-
-if self.normalize_batch:
-    feature_extraction = BatchNormalization()(feature_extraction)
-
-feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
-
-if self.max_pooling:
-    feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)
-
+def __get_model__(self, mode='train' ):
+    
+    metrics = self.metrics if mode=='train' else self.test_metrics
+    main_input = Input(shape=self.input_shape, name='main_input')
+    x = self.data_augmentation(main_input) # augment dataset
+    x = self.fn_normalization(x) # apply normalization function
+    feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(x)
+    if self.max_pooling:
+        feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)# feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+    
     if self.normalize_batch:
         feature_extraction = BatchNormalization()(feature_extraction)
-
-feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
-
-if self.max_pooling:
-    feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)
-
+    
+    feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+    
+    if self.max_pooling:
+        feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)
+    
+        if self.normalize_batch:
+            feature_extraction = BatchNormalization()(feature_extraction)
+    
+    feature_extraction = Conv2D(self.n_filters, (3, 3), kernel_initializer='glorot_uniform', activation=self.activation, padding='same')(feature_extraction)
+    
+    if self.max_pooling:
+        feature_extraction = MaxPooling2D(pool_size, padding='valid')(feature_extraction)
+    
+        if self.normalize_batch:
+            feature_extraction = BatchNormalization()(feature_extraction)
+    
+    x = Flatten()(feature_extraction)
+    
     if self.normalize_batch:
-        feature_extraction = BatchNormalization()(feature_extraction)
-
-x = Flatten()(feature_extraction)
-
-if self.normalize_batch:
-    x = BatchNormalization()(x)
-# x = keras.layers.Dense(16, activation='relu')(x)
-output = Dense(4, activation='softmax')(x)
-
-model = Model(main_input, outputs=output, trainable=False)
-
-model.compile(
-    optimizer=self.optimizer,
-    loss=self.loss, # CategoricalCrossentropy(from_logits=True), #
-    metrics=metrics,
-)
-
-model.summary()
-
-return model
+        x = BatchNormalization()(x)
+    # x = keras.layers.Dense(16, activation='relu')(x)
+    output = Dense(4, activation='softmax')(x)
+    
+    model = Model(main_input, outputs=output, trainable=False)
+    
+    model.compile(
+        optimizer=self.optimizer,
+        loss=self.loss, # CategoricalCrossentropy(from_logits=True), #
+        metrics=metrics,
+    )
+    
+    model.summary()
+    
+    return model
         
 ```
 
