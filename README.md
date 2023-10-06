@@ -83,7 +83,7 @@ write
 metrics=['categorical_accuracy']
 ```
 
-Here is the full code:
+Full code of the method creating the algorithm:
 
 ```python
 
