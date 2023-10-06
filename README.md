@@ -168,6 +168,8 @@ The visuallization of the training performance of the algorithm:
 
 ### Results
 
+&nbsp;
+
 |Categorical Accuracy|Precision|Recall|AUC|
 |--|--|--|--|
 |0.9722|0.9706|0.9167|0.9968|
