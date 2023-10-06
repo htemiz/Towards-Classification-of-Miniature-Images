@@ -173,13 +173,17 @@ The visuallization of the training performance of the algorithm:
 |0.9722|0.9706|0.9167|0.9968|
 
 &nbsp;
+&nbsp;
 
 **Confusion Matrix**
 
 ![](images/confusion_matrix.png)
 
+&nbsp;
+&nbsp;
 
-#### Receiver Operating Characteristic (ROC) Curve: 
+
+**Receiver Operating Characteristic (ROC) Curve** 
 ![](images/ROC_curve.png)
 
 
