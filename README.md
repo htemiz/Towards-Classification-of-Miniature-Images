@@ -58,7 +58,7 @@ A couple of sample miniature images of each craftsmen:
 <tr></tr>
 </table>
 
-The data augmented by the following operations:
+The data augmented by the following operations while training the algorithm:
 
 - RandomFlip(‘horizontal’)
 - RandomRotation(0.10)
@@ -153,11 +153,32 @@ python run.py
 
 
 ### Training
+The following hyper-parameter values were used in training the algorithm:
+
+- Epoch = 1000
+- Learning rate = 1E-3
+- Learning rate patience = 100 epochs
+- Learning rate factor = 1/2
+- Early stopping patience = 500 epochs
+- Batch size = 16
+
+The visuallization of the training performance of the algorithm:
+
+![](images/training.png)
+
+### Results
+
+|Categorical Accuracy|Precision|Recall|AUC|
+|||||
+|0.9722|0.9706|0.9167|0.9968|
+
+Confusion Matrix:
+
+![](images/confusion_matrix.png)
 
 
-
-
-
+Receiver Operating Characteristic (ROC) Curve: 
+![](images/ROC_curve.png)
 
 
 
