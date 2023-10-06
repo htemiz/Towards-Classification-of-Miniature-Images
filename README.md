@@ -60,10 +60,10 @@ A couple of sample miniature images of each craftsmen:
 
 The data augmented by the following operations:
 
-•	RandomFlip(‘horizontal’)
-•	RandomRotation(0.10)
-•	RandomRotation(0.15)
-•	RandomRotation(0.25)
+1.RandomFlip(‘horizontal’)
+1.RandomRotation(0.10)
+1.RandomRotation(0.15)
+1.RandomRotation(0.25)
 
 
 
